@@ -1,13 +1,24 @@
 $(document).ready(function(){
 
-//setting empty value object
+//setting empty object values
 var calcInputs = {
   x:"",
   y:"",
   type:""
 };
 
-//clear button
+//click event for number buttons using .data()
+$('#calculator').on('click', 'button', function (){
+  var number = $(this).data("id");
+  if (calcInputs.type == ""){
+  calcInputs.x = number;
+  }else{
+  calcInputs.y = number;
+  }
+  console.log(calcInputs);
+  });
+
+//click event clear button
 $('#clear').on("click", 'button', function(){
   $('#numbersOnDom').empty();
     calcInputs = {
@@ -17,19 +28,18 @@ $('#clear').on("click", 'button', function(){
   };
 });
 
-//operator buttons
+//click event operator buttons
 $('#operator').on('click', 'button', function (){
   var operator = $(this).attr("id");
   calcInputs.type = operator;
 });
 
-//equal button
+//click event equal button
 $('#equals').on('click', function (){
 $('#numbersOnDom').empty();
-//set input value to a var in an object
-calcInputs.x = $("#numberOne").val();
-calcInputs.y = $("#numberTwo").val();
-console.log(calcInputs);
+//set input value to a var in an object for base mode
+//calcInputs.x = $("#numberOne").val();  uncomment for base mode
+//calcInputs.y = $("#numberTwo").val();  uncomment for base mode
 //selects function based off operator type
 var currentOperator = calcInputs.type;
 //I was originally going to you a IF, ELSE IF, ELSE statement to call the ajax functions but saw

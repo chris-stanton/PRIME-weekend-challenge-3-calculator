@@ -8,19 +8,28 @@ h2 {
   color: red;
 }
 
-#numberOne {
+/*#numberOne {
   margin-left: 559px;
-}
+} uncomment for base mode
 
 #operator {
   text-align: center;
   font-size: 50px;
   margin-bottom: 40px;
-}
+} uncomment for base mode
 
 #numberTwo {
   margin-left: 559px;
-}
+} uncomment for base mode*/
+
+#calculator {
+  text-align: center;
+}/* comment out for base mode */
+
+#operator {
+  text-align: center;
+  margin-top: 20px;
+}/* comment out for base mode */
 
 #equals {
   text-align: center;
