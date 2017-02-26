@@ -26,7 +26,7 @@ $('#operator').on('click', 'button', function (){
 //equal button
 $('#equals').on('click', function (){
 $('#numbersOnDom').empty();
-//set input value to a var
+//set input value to a var in an object
 calcInputs.x = $("#numberOne").val();
 calcInputs.y = $("#numberTwo").val();
 console.log(calcInputs);
@@ -69,7 +69,7 @@ function additionToDom(){
     url: '/add',
     success: function(data) {
       $("#numbersonDom").empty();
-      $("#numbersOnDom").text("<p>"+ data.result +"<p>");
+      $("#numbersOnDom").append("<p>"+ data.result +"<p>");
     }
   });
 }

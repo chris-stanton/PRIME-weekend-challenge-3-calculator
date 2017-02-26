@@ -8,23 +8,18 @@ h2 {
   color: red;
 }
 
-#numbersOnDom {
-  text-align: center;
-  font-size: 60px;
-}
-
 #numberOne {
-  display: inline-block;
-}
-
-#numberTwo {
-  display: inline-block;
+  margin-left: 559px;
 }
 
 #operator {
   text-align: center;
-  font-size: 55px;
-  display: inline-block;
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+
+#numberTwo {
+  margin-left: 559px;
 }
 
 #equals {
@@ -37,4 +32,9 @@ h2 {
   text-align: center;
   font-size: 15px;
   margin-top: 10px;
+}
+
+#numbersOnDom {
+  text-align: center;
+  font-size: 80px;
 }
