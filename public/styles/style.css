@@ -1,0 +1,40 @@
+h1 {
+  text-align: center;
+  color: red;
+}
+
+h2 {
+  text-align: center;
+  color: red;
+}
+
+#numbersOnDom {
+  text-align: center;
+  font-size: 60px;
+}
+
+#numberOne {
+  display: inline-block;
+}
+
+#numberTwo {
+  display: inline-block;
+}
+
+#operator {
+  text-align: center;
+  font-size: 55px;
+  display: inline-block;
+}
+
+#equals {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+#clear {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 10px;
+}
