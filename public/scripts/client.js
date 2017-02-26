@@ -10,6 +10,7 @@ var calcInputs = {
 //click event for number buttons using .data()
 $('#calculator').on('click', 'button', function (){
   var number = $(this).data("id");
+//this was a solution that works "ok" but am trying to figure out a better way
   if (calcInputs.type == ""){
   calcInputs.x = number;
   }else{
