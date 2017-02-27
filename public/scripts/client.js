@@ -8,9 +8,9 @@ var calcInputs = {
 };
 
 //click event for number buttons using .data()
-$('#calculator').on('click', 'button', function (){
+$("#calculator").on("click", "button", function (){
   var number = $(this).data("id");
-//this was a solution that works "ok" but am trying to figure out a better way
+//this was a solution that "works" but am trying to figure out a better way
   if (calcInputs.type == ""){
   calcInputs.x = number;
   }else{
@@ -20,8 +20,8 @@ $('#calculator').on('click', 'button', function (){
   });
 
 //click event clear button
-$('#clear').on("click", 'button', function(){
-  $('#numbersOnDom').empty();
+$("#clear").on("click", "button", function(){
+  $("#numbersOnDom").empty();
     calcInputs = {
     x:"",
     y:"",
@@ -30,14 +30,14 @@ $('#clear').on("click", 'button', function(){
 });
 
 //click event operator buttons
-$('#operator').on('click', 'button', function (){
+$("#operator").on("click", "button", function (){
   var operator = $(this).attr("id");
   calcInputs.type = operator;
 });
 
 //click event equal button
-$('#equals').on('click', function (){
-$('#numbersOnDom').empty();
+$("#equals").on("click", function (){
+$("#numbersOnDom").empty();
 //set input value to a var in an object for base mode
 //calcInputs.x = $("#numberOne").val();  uncomment for base mode
 //calcInputs.y = $("#numberTwo").val();  uncomment for base mode
@@ -47,16 +47,16 @@ var currentOperator = calcInputs.type;
 // SWITCH CASE and seemed really cool.  So I decided to try it.  I think that using SWITCH CASE
 //used less key strokes
 switch (currentOperator) {
-  case 'add':
+  case "add":
     getAdd();
     break;
-  case 'subtract':
+  case "subtract":
     getSubtract();
     break;
-  case 'multiply':
+  case "multiply":
     getMultiply();
     break;
-  case 'divide':
+  case "divide":
     getDivide();
     break;
   default:
@@ -66,21 +66,23 @@ switch (currentOperator) {
 //addition POST & GET
 function getAdd(){
   $.ajax({
-    type: 'POST',
-    url: '/add',
+    type: "POST",
+    url: "/add",
     data: calcInputs,
     success: function(data) {
+    //console.log(calcInputs);
     additionToDom();
     }
   });
 }
 function additionToDom(){
   $.ajax({
-    type:'GET',
-    url: '/add',
+    type:"GET",
+    url: "/add",
     success: function(data) {
       $("#numbersonDom").empty();
-      $("#numbersOnDom").append("<p>"+ data.result +"<p>");
+      $("#numbersOnDom").append("<div>" + data.result + "</div>");
+      //console.log(data.result);
     }
   });
 }
@@ -88,8 +90,8 @@ function additionToDom(){
 //subtraction POST & GET
 function getSubtract(){
   $.ajax({
-    type: 'POST',
-    url: '/subtract',
+    type: "POST",
+    url: "/subtract",
     data: calcInputs,
     success: function(data) {
     subtractToDom();
@@ -98,11 +100,11 @@ function getSubtract(){
 }
 function subtractToDom(){
   $.ajax({
-    type:'GET',
-    url: '/subtract',
+    type:"GET",
+    url: "/subtract",
     success: function(data) {
       $("#numbersonDom").empty();
-      $("#numbersOnDom").append("<p>"+ data.result +"<p>");
+      $("#numbersOnDom").append("<div>" + data.result + "</div>");
     }
   });
 }
@@ -110,8 +112,8 @@ function subtractToDom(){
 //multiplcation POST & GET
 function getMultiply(){
   $.ajax({
-    type: 'POST',
-    url: '/multiply',
+    type: "POST",
+    url: "/multiply",
     data: calcInputs,
     success: function(data) {
     multiplyToDom();
@@ -120,11 +122,11 @@ function getMultiply(){
 }
 function multiplyToDom(){
   $.ajax({
-    type:'GET',
-    url: '/multiply',
+    type:"GET",
+    url: "/multiply",
     success: function(data) {
       $("#numbersonDom").empty();
-      $("#numbersOnDom").append("<p>"+ data.result +"<p>");
+      $("#numbersOnDom").append("<div>" + data.result + "</div>");
     }
   });
 }
@@ -132,8 +134,8 @@ function multiplyToDom(){
 //division POST & GET
 function getDivide(){
   $.ajax({
-    type: 'POST',
-    url: '/divide',
+    type: "POST",
+    url: "/divide",
     data: calcInputs,
     success: function(data) {
     divideToDom();
@@ -142,11 +144,11 @@ function getDivide(){
 }
 function divideToDom(){
   $.ajax({
-    type:'GET',
-    url: '/divide',
+    type:"GET",
+    url: "/divide",
     success: function(data) {
       $("#numbersonDom").empty();
-      $("#numbersOnDom").append("<p>"+ data.result +"<p>");
+      $("#numbersOnDom").append("<div>" + data.result + "</div>");
     }
   });
 }
