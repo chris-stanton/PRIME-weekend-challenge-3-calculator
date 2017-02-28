@@ -12,9 +12,9 @@ $("#calculator").on("click", "button", function (){
   var number = $(this).data("id");
 //this was a solution that "works" but am trying to figure out a better way
   if (calcInputs.type == ""){
-  calcInputs.x = number;
+  calcInputs.x += number;
   }else{
-  calcInputs.y = number;
+  calcInputs.y += number;
   }
   console.log(calcInputs);
   });
@@ -41,6 +41,7 @@ $("#numbersOnDom").empty();
 //set input value to a var in an object for base mode
 //calcInputs.x = $("#numberOne").val();  uncomment for base mode
 //calcInputs.y = $("#numberTwo").val();  uncomment for base mode
+
 //selects function based off operator type
 var currentOperator = calcInputs.type;
 //I was originally going to you a IF, ELSE IF, ELSE statement to call the ajax functions but saw
